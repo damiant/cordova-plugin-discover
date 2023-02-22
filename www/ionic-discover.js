@@ -11,8 +11,10 @@ var IonicDiscover = {
         return exec(null, null, "IonicDiscover", "stop");
     },
 
-    getServices: function(success, failure) {
-        return exec(success, failure, "IonicDiscover", "getServices");
+    getServices: function() {
+        return new Promise((resolve, reject) => {
+            window.cordova.exec(resolve, reject, "IonicDiscover", "getServices");
+        });        
     },
 };
 
