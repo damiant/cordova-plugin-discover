@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="cordova-plugin-ionic-discover" version="1.0.3">
+
+    <name>cordova-plugin-ionic-discover</name>
+    <description>Cordova Ionic Discover plugin</description>
+    <author href="https://github.com/manucorporat">Manu Mtz.-Almeida</author>
+    <keywords>ecosystem:cordova,cordova-android,cordova-ios,cordova,plugin,network,zeroconf,bonjour,mdns,service,discovery</keywords>
+    <license>MIT</license>
+    <repo>git+https://github.com/ionic-team/cordova-plugin-ionic-discover.git</repo>
+    <issue>https://github.com/ionic-team/cordova-plugin-ionic-discover/issues</issue>
+
+    <engines>
+        <engine name="cordova" version=">=3.0.0"/>
+    </engines>
+
+    <platform name="ios">
+        <js-module src="www/ionic-discover.js" name="IonicDiscover">
+            <clobbers target="window.IonicDiscover"/>
+        </js-module>
+        <config-file target="config.xml" parent="/*">
+            <feature name="IonicDiscover">
+                <param name="ios-package" value="CDVIonicDiscover"/>
+            </feature>
+        </config-file>
+        <header-file src="src/ios/IonicDiscover-Bridging-Header.h"/>
+        <source-file src="src/ios/IonicDiscover.swift"/>
+        <source-file src="src/ios/CDVIonicDiscover.swift"/>
+        <header-file src="src/ios/GCDAsyncUdpSocket.h"/>
+        <source-file src="src/ios/GCDAsyncUdpSocket.m"/>
+    </platform>
+
+    <platform name="android">
+        <js-module src="www/ionic-discover.js" name="IonicDiscover">
+            <clobbers target="window.IonicDiscover"/>
+        </js-module>
+        <config-file target="config.xml" parent="/*">
+            <feature name="IonicDiscover">
+                <param name="android-package" value="com.ionicframework.discover.IonicDiscover"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/IonicDiscover.java" target-dir="src/com/ionicframework/discover"/>
+    </platform>
+
+    <dependency id="cordova-plugin-add-swift-support"/>
+</plugin>
