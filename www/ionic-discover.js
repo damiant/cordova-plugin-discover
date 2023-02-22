@@ -1,20 +1,22 @@
 'use strict';
-var exec = require('cordova/exec');
 
 var IonicDiscover = {
-
-    start: function() {
-        return exec(null, null, "IonicDiscover", "start");
-    },
-
-    stop: function() {
-        return exec(null, null, "IonicDiscover", "stop");
-    },
-
-    getServices: function() {
+    start: function () {
         return new Promise((resolve, reject) => {
-            window.cordova.exec(resolve, reject, "IonicDiscover", "getServices");
-        });        
+            return window.cordova.exec(resolve, reject, "IonicDiscover", "start");
+        });
+    },
+
+    stop: function () {
+        return new Promise((resolve, reject) => {
+            window.cordova.exec(resolve, reject, "IonicDiscover", "stop");
+        });
+    },
+
+    getServices: function () {
+        return new Promise((resolve, reject) => {
+            return window.cordova.exec(resolve, reject, "IonicDiscover", "getServices");
+        });
     },
 };
 
