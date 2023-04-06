@@ -9,6 +9,7 @@ public struct Service {
     let address: String
     let port: Int
     let path: String
+    let secure: Bool
 
     public static func ==(lhs: Service, rhs: Service) -> Bool {
         return lhs.id == rhs.id && lhs.lastTimeStamp == rhs.lastTimeStamp;
@@ -21,7 +22,8 @@ public struct Service {
             "hostname": hostname,
             "address": address,
             "port": port,
-            "path": path
+            "path": path,
+            "secure": secure
         ]
     }
 }
@@ -109,7 +111,8 @@ public class IonicDiscover : NSObject, GCDAsyncUdpSocketDelegate {
             let hostname = dict["host"] as? String,
             let address = dict["ip"] as? String,
             let port = dict["port"] as? Int,
-            let path = dict["path"] as? String
+            let path = dict["path"] as? String,
+            let secure = dict["secure"] as? Bool
             else { return }
 
         let now = Date().timeIntervalSince1970
@@ -120,7 +123,8 @@ public class IonicDiscover : NSObject, GCDAsyncUdpSocketDelegate {
             hostname: hostname,
             address: address,
             port: port,
-            path: path
+            path: path,
+            secure: secure
         );
         self.gc();
     }

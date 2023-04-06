@@ -147,7 +147,8 @@ public class IonicDiscover extends CordovaPlugin {
           dict.getString("host"),
           dict.getString("ip"),
           dict.getInt("port"),
-          dict.getString("path")
+          dict.getString("path"),
+          dict.getString("secure")
       ));
     } catch (ExceptionInInitializerError | JSONException e) {
       Log.e(LOGTAG, "Malformed service response");
@@ -223,6 +224,7 @@ public class IonicDiscover extends CordovaPlugin {
         o.put("address", s.address);
         o.put("port", s.port);
         o.put("path", s.path);
+        o.put("secure", s.secure);
         servicesArray.put(o);
       } catch (JSONException e) {
         e.printStackTrace();
@@ -245,8 +247,9 @@ public class IonicDiscover extends CordovaPlugin {
     public String address;
     public int port;
     public String path;
+    public boolean secure;
 
-    public Service(String id, long timeStamp, String name, String hostname, String address, int port, String path) {
+    public Service(String id, long timeStamp, String name, String hostname, String address, int port, String path, boolean secure) {
       this.id = id;
       this.timeStamp = timeStamp;
       this.name = name;
@@ -254,6 +257,7 @@ public class IonicDiscover extends CordovaPlugin {
       this.address = address;
       this.port = port;
       this.path = path;
+      this.secure = secure;
     }
   }
 }

@@ -15,6 +15,7 @@ export interface Service {
   address: string
   port: number
   name: string
+  secure: boolean
 }
 
 export const IonicDiscover = (window as any).IonicDiscover;
@@ -143,6 +144,7 @@ export class Publisher extends events.EventEmitter implements IPublisher {
       ip: ip,
       port: this.port,
       path: this.path,
+      secure: this.secure
     };
     return PREFIX + JSON.stringify(message);
   }
