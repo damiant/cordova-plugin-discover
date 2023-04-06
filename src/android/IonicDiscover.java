@@ -148,7 +148,7 @@ public class IonicDiscover extends CordovaPlugin {
           dict.getString("ip"),
           dict.getInt("port"),
           dict.getString("path"),
-          dict.getString("secure")
+          dict.getBoolean("secure")
       ));
     } catch (ExceptionInInitializerError | JSONException e) {
       Log.e(LOGTAG, "Malformed service response");
