@@ -3,7 +3,7 @@
 ## Installation
 
 ```shell
-npm i cordova-plugin-discover@https://github.com/dtarnawsky/cordova-plugin-discover
+npm install @webnativellc/cordova-plugin-discover
 ```
 
 Create a file called `discover.ts`:
