@@ -1,6 +1,6 @@
 {
-    "name": "cordova-plugin-ionic-discover",
-    "version": "1.0.4",
+    "name": "@webnativellc/cordova-plugin-ionic-discover",
+    "version": "1.0.5",
     "description": "Cordova Ionic Discover plugin",
     "cordova": {
         "id": "cordova-plugin-ionic-discover",
@@ -15,7 +15,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/ionic-team/cordova-plugin-ionic-discover.git"
+        "url": "git+https://github.com/damiant/cordova-plugin-discover.git"
     },
     "keywords": [
         "ecosystem:cordova",
